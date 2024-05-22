@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+@import url("https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css");
+
+
+:root {
+    --segundaCor: #23272f;
+    --primeiraCor: #181a20;
+    --realceCor: #58c4dc;
+    --fonteCor: #fcfcfc;
+    --linhaCor: #404756;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: var(--primeiraCor);
+    font-family: "Ubuntu", sans-serif;
+    color: var(--fonteCor);
+}
+
+.container {
+    display: grid;
+    grid-template-areas: 'header''main';
+}
+.container header {
+    grid-area: 'header';
+}
+.container header h1 {
+    color: var(--realceCor);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.d-inline-flex a {
+    color: var(--fonteCor);
+    text-transform: uppercase;
+    text-decoration: none;
+    font-size: 25px;
+}
+.card {
+    background: var(--linhaCor);
+}
+.card a {
+    text-align: justify;
+    color: var(--fonteCor);
+    margin-left: 50px;
+    text-decoration: none;
+    font-size: 15px;
+}
+.container main {
+    grid-area: 'main';
+    display: grid;
+    grid-template-areas: 'apostila';
+}
+.apostila {
+    background: var(--segundaCor);
+    border-radius: 10px;
+    grid-area: 'apostila';
+    height: 1000px;
+    overflow: auto;
+}
+.apostila h3 {
+    text-align: justify;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.apostila h2 {
+    text-align: justify;
+    margin-left: 25px;
+    margin-top: 25px;
+}
+.apostila p {
+    text-align: justify;
+    text-indent: 5%;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-top: 25px;
+}
+.apostila b {
+    color: var(--linhaCor);
+}
+.apostila img {
+    width: 50%;
+    border-radius: 10px;
+}
+.container main button {
+    background: none;
+    width: 35%;
+    height: 50px;
+    border: solid 1px var(--linhaCor);
+    border-radius: 100px;
+    color: var(--fonteCor);
+    font-size: 20px;
+    margin-top: 50px;
+    transition: all 0.25s;
+}
+.container main button:hover {
+    background: var(--realceCor);
+    border: none;
+    color: var(--linhaCor);
+}
+.container footer {
+    color: #fff;
+    text-align: justify;
+    padding: 1em;
+    margin-top: 25px;
+}
