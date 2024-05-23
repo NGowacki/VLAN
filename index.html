@@ -49,24 +49,27 @@
                     <a href="#subtitulo22">VLANs em Redes Educacionais</a>
                     <a href="#subtitulo23">VLANs em Datacenters</a>
                   <a href="#titulo7"><b>7. Troubleshooting e Manutenção de VLANs</b></a>
-                    <a href="#subtitulo24">Diagnóstico de Problemas Comuns</a>
-                    <a href="#subtitulo25">Monitoramento de Tráfego de VLAN</a>
+                    <a href="#subtitulo25">Diagnóstico de Problemas Comuns</a>
+                    <a href="subtitulo26">Problemas de Configuração de Trunking</a>
+                    <a href="#subtitulo27">Monitoramento de Tráfego de VLAN</a>
                   <a href="#titulo8"><b>8. Avanços e Tendências em VLANs</b></a>
-                    <a href="#subtitulo26">Avanços e Tendências em VLANs</a>
+
                   </div>
               </div>
         </header>
         <main>
               <div class="apostila">
                 <h2 id="titulo1">1. Introdução às VLANs</h2>
-                <h3 id="subtitulo1">O que é uma VLAN?</h3>
+                <h3 id="subtitulo1">O que é uma VLAN?</h3> 
                 <p>Uma VLAN (Virtual Local Area Network) é uma divisão lógica de uma rede local (LAN) em múltiplos domínios de broadcast menores e independentes. Ela permite que administradores de rede dividam e agrupem hosts em uma rede com base em requisitos funcionais e de segurança, sem precisar modificar a infraestrutura física da rede.</p>
-                <p>Figura 1 - Inserção da tag VLAN 802.1q</p>
+                <b style="color: white; margin-bottom: 10px;">Figura 1 - Inserção da tag VLAN 802.1q</b><br>
+                <img src="img/image1.png" alt="Inserção da tag VLAN 802.1q">
                 <h3 id="subtitulo2">Definição de VLAN</h3>
                 <p>As VLANs são implementadas em switches de camada 2, onde portas são configuradas para pertencer a VLANs específicas. Isso cria domínios de broadcast separados, melhorando o desempenho da rede ao reduzir o tráfego desnecessário. Cada VLAN é uma rede lógica independente, mesmo que os hosts estejam fisicamente conectados ao mesmo switch.</p>
                 <p>Quando um host envia um quadro Ethernet, o switch adiciona uma tag VLAN identificando a qual VLAN aquele tráfego pertence. Switches podem então encaminhar o tráfego apenas para portas que pertencem àquela VLAN específica. Isso isola o tráfego entre VLANs, aumentando a segurança.</p>
-                <p>Figura 2- Mapeamento de uma rede VLAN 802.1q</p>
-                <p>Fonte: Macêdo, (2012).</p>
+                <b style="color: white; margin-bottom: 10px;">Figura 2 - Mapeamento de uma rede VLAN 802.1q
+                </b><br>
+                <img src="img/image2.png" alt="Mapeamento de uma rede VLAN 802.1q">
                 <h3 id="subtitulo3">História e evolução das VLANs</h3>
                 <p>As VLANs surgiram no final dos anos 80 como uma forma de dividir redes grandes em segmentos menores. Antes disso, todas as portas de um switch ficavam no mesmo domínio de broadcast por padrão. As VLANs permitiram uma configuração mais flexível e segmentada das redes.</p>
                 <p>Hoje em dia, as VLANs são amplamente utilizadas em redes corporativas para isolar tráfego de diferentes departamentos, aplicações e serviços. Elas são uma tecnologia fundamental para a implementação de redes locais virtuais e seguras.</p>
@@ -79,115 +82,106 @@
                 <p>1. Videoconferência: Priorizando o tráfego de vídeo, as VLANs garantem recursos adequados para videoconferências de alta qualidade.</p>
                 <p>2. Acesso Remoto: VLANs são usadas para fornecer acesso remoto seguro a aplicativos baseados em nuvem, isolando usuários remotos da rede principal.</p>
                 <p>3. Backup e Recuperação em Nuvem:Ao isolar o tráfego de backup e recuperação, as VLANs melhoram o desempenho e reduzem os congestionamentos na rede.</p>
-
                 <h2 id="titulo2">2. Fundamentos de VLANs</h2>
                 <h3 id="subtitulo6">Como as VLANs funcionam?</h3>
                 <p>As VLANs (Virtual Local Area Networks) são uma tecnologia de rede que permite dividir uma rede local em múltiplos domínios de broadcast menores e independentes. Isso é feito ao associar dispositivos a uma VLAN específica, que é identificada por um número único chamado ID de VLAN (VLAN ID). Cada dispositivo conectado a uma VLAN pertence ao mesmo domínio de transmissão, e o tráfego é encaminhado apenas para dispositivos dentro da mesma VLAN.</p>
                 <h3 id="subtitulo7">Segmentação de rede</h3>
                 <p>A segmentação de rede é um benefício fundamental das VLANs. Elas permitem dividir uma rede em segmentos menores, cada um com sua própria sub rede, facilitando a gestão e a segurança da rede. Isso é especialmente útil em redes grandes ou complexas, onde a segmentação ajuda a reduzir a complexidade de administração e a melhorar a performance da rede.</p>
-                <p>Figura 3 - Exemplo de segmentação de Vlan</p>
-                <p>Fonte: wiki.sj.ifsc.edu.br</p>
+                <b style="color: white; margin-bottom: 10px;">Figura 3 -  Exemplo de segmentação de Vlan</b><br>
+                <img src="img/image3.jpg" alt="Exemplo de segmentação de Vlan">
                 <h3 id="subtitulo8">Isolamento de broadcast</h3>
                 <p>O isolamento de broadcast é outra vantagem das VLANs. Em uma rede sem VLANs, todas as transmissões de broadcast são enviadas para todas as portas, o que pode causar congestionamento e diminuir o desempenho. As VLANs restringem as transmissões de broadcast apenas às portas que pertencem à mesma VLAN, melhorando a eficiência e a performance da rede.</p>
                 <h3 id="subtitulo9">Tipos de VLANs</h3>
                 <p>Existem vários tipos de VLANs que podem ser implementadas em uma rede, cada uma com seu propósito específico:</p>
-                <p>1. VLAN de Dados: Usada para segmentar o tráfego de dados geral.</p>
-                <p>2. VLAN de Voz: Priorizada para tráfego de voz, garantindo qualidade de serviço (QoS) para telefonia IP.</p>
-                <p>3. VLAN de Gerenciamento: Isola o tráfego de gerenciamento de rede, aumentando a segurança ao limitar o acesso aos dispositivos de gerenciamento.</p>
-                <p>4. VLAN Nativa: VLAN padrão atribuída às portas trunk em switches.</p>
-
+                <p>1. VLANs padrão: Essas são as VLANs mais comuns e são configuradas por padrão em muitos dispositivos de rede. Elas são usadas para segmentar redes em bases funcionais ou de segurança.</p>
+                <p>2. VLANs de voz: Essas VLANs são usadas para priorizar o tráfego de voz sobre IP (VoIP) e garantir uma experiência de chamada de alta qualidade.</p>
+                <p>3. VLANs de gerenciamento: Essas VLANs são usadas para isolar o tráfego de gerenciamento da rede, garantindo que apenas os dispositivos autorizados tenham acesso a essas informações.</p>
+                <p>4. VLANs nativas e não-nativas: As VLANs nativas são configuradas por padrão em dispositivos de rede e são usadas para segmentar redes em bases funcionais ou de segurança. As VLANs não-nativas são configuradas manualmente e são usadas para segmentar redes em bases específicas.
+                  Identificadores de VLAN (VLAN IDs)</p>
                 <h2 id="titulo3">3. Configuração de VLANs</h2>
+                <p>Para configurar VLANs em um switch, é necessário criar e nomear as VLANs desejadas, e então atribuir portas a cada VLAN específica. Isso cria domínios de broadcast separados, com tráfego sendo encaminhado apenas para portas pertencentes àquela VLAN.</p>
                 <h3 id="subtitulo10">Criar e nomear VLANs</h3>
-                <p>A criação e nomeação de VLANs é um passo crucial na configuração de uma rede VLAN. Em switches de rede, os administradores podem criar VLANs atribuindo-lhes um ID único e um nome descritivo. Por exemplo, em um switch Cisco, a configuração pode ser feita com os seguintes comandos:</p>
-                <p>```
-                Switch(config)# vlan 10
-                Switch(config-vlan)# name Marketing
-                ```</p>
+                <p>VLANs são identificadas por um número único, geralmente entre 1 e 4094. Por padrão, todas as portas pertencem à VLAN 1, que não pode ser renomeada ou excluída. Administradores podem criar VLANs adicionais e atribuir-lhes nomes descritivos para facilitar o gerenciamento.</p>
                 <h3 id="subtitulo11">Atribuir portas a VLANs</h3>
-                <p>Após a criação das VLANs, é necessário atribuir portas do switch a essas VLANs. Isso define quais dispositivos conectados às portas pertencem a qual VLAN. Em um switch Cisco, isso pode ser configurado da seguinte forma:</p>
-                <p>```
-                Switch(config)# interface fastethernet 0/1
-                Switch(config-if)# switchport mode access
-                Switch(config-if)# switchport access vlan 10
-                ```</p>
+                <p>Após criar as VLANs, portas individuais do switch precisam ser configuradas para pertencer a cada VLAN específica. Isso determina quais dispositivos finais pertencem a cada domínio de broadcast separado.</p>
+                <b style="color: white; margin-bottom: 10px;">Figura 4 - Mostra que podemos configurar VLANs com diferentes portas
+                </b><br>
+                <img src="img/image4.png" alt="Mostra que podemos configurar VLANs com diferentes portas
+                ">
                 <h3 id="subtitulo12">VLAN Trunking</h3>
-                <p>O VLAN Trunking é uma técnica que permite que múltiplas VLANs sejam transmitidas por um único link entre switches. Isso é feito encapsulando quadros Ethernet com uma tag VLAN. Em switches Cisco, o protocolo IEEE 802.1Q é amplamente utilizado para essa finalidade. A configuração pode ser feita com os seguintes comandos:</p>
-                <p>```
-                Switch(config)# interface fastethernet 0/24
-                Switch(config-if)# switchport mode trunk
-                Switch(config-if)# switchport trunk encapsulation dot1q
-                ```</p>
+                <p>VLAN trunking é uma tecnologia fundamental para interligar VLANs entre switches e roteadores, permitindo que várias VLANs compartilhem um único link físico. Isso é essencial para redes complexas que não sejam de uma estrutura de rede flexível e escalável.</p>
+                <p>Um link trunk carrega tráfego para várias VLANs sobre um único enlace físico, utilizando um mecanismo de marcação interno chamado IEEE 802.1Q. Cada quadro Ethernet é marcado com uma tag identificando a VLAN a quais pertencem, permitindo que switches encaminhem o tráfego apenas para portas que pertencem a VLAN específicas.</p>
+                <p>O padrão IEEE 802.1Q define como o trunking de VLANs deve funcionar, especificando o formato da tag VLAN adicionada aos quadros Ethernet para identificar a VLAN. Isso permite que os switches entendam e encaminhem corretamente o tráfego para as VLANs corretas.</p>
+                <p>Além disso, o trunking de VLANs também é conhecido como VLAN trunking ou entroncamento de portas. Ele é comumente utilizado em redes de computadores, telefonia e redes de próxima geração, onde a segmentação da rede é essencial para a segurança, a eficiência e a escalabilidade.</p>
                 <h3 id="subtitulo13">Configuração de portas trunk</h3>
-                <p>As portas trunk são configuradas para transportar tráfego de múltiplas VLANs entre switches. A configuração correta das portas trunk é crucial para a comunicação inter-VLAN. Em switches Cisco, isso pode ser configurado da seguinte forma:</p>
-                <p>```
-                Switch(config)# interface gigabitethernet 0/1
-                Switch(config-if)# switchport mode trunk
-                Switch(config-if)# switchport trunk allowed vlan 10,20,30
-                ```</p>
+                <p>Portas de switch precisam ser configuradas manualmente como portas trunk para habilitar o trunking de VLANs. Isso permite que múltiplas VLANs compartilhem aquele link físico entre switches. Parâmetros adicionais como a VLAN nativa também precisam ser configurados.</p>
                 <h3 id="subtitulo14">VLANs dinâmicas e protocolos de gerenciamento</h3>
-                <p>As VLANs dinâmicas permitem a associação automática de dispositivos a VLANs com base em critérios como endereço MAC. Protocolos de gerenciamento como o GVRP (GARP VLAN Registration Protocol) facilitam a propagação dinâmica de informações de VLAN em uma rede. A configuração do GVRP pode ser feita em switches que suportam este protocolo.</p>
+                <p>Existem protocolos que permitem a configuração dinâmica de VLANs e trunking, simplificando a administração da rede.</p>
                 <h3 id="subtitulo15">GVRP (GARP VLAN Registration Protocol)</h3>
-                <p>O GVRP é um protocolo que permite que switches dinamicamente registrem e distribuam informações de VLANs. Ele trabalha em conjunto com o protocolo de registro genérico GARP (Generic Attribute Registration Protocol) para gerenciar a associação de VLANs. Isso simplifica a administração de redes grandes com muitas VLANs.</p>
+                <p>O GVRP permite que switches troquem informações sobre VLANs configuradas dinamicamente. Isso permite que switches aprendam sobre VLANs em outros switches e configurem automaticamente portas trunk e membros de VLAN.</p>
                 <h3 id="subtitulo16">VTP (VLAN Trunking Protocol)</h3>
-                <p>O VTP (VLAN Trunking Protocol) é um protocolo proprietário da Cisco que facilita a gestão de VLANs em uma rede de switches. Ele propaga informações de VLAN automaticamente entre switches, simplificando a administração. A configuração básica do VTP pode ser feita com os seguintes comandos:</p>
-                <p>```
-                Switch(config)# vtp domain NomeDoDominio
-                Switch(config)# vtp mode server
-                ```</p>
-
+                <p>O VTP permite que switches troquem informações sobre VLANs configuradas centralmente. Isso permite que alterações em VLANs feitas em um switch sejam propagadas automaticamente para outros switches na mesma VTP domain. O VTP simplifica muito a configuração e gerenciamento de VLANs em redes grandes.</p>
                 <h2 id="titulo4">4. Implementação de VLANs</h2>
                 <h3 id="subtitulo17">Implementação de VLANs</h3>
-                <p>A implementação de VLANs envolve várias etapas, desde o planejamento até a configuração final dos dispositivos de rede. É importante seguir boas práticas para garantir que as VLANs sejam configuradas de forma segura e eficiente.</p>
+                <p>A implementação de VLANs é um processo que envolve planejamento, design, configuração em switches e testes. Aqui estão os passos para implementar VLANs:</p>
                 <h3 id="subtitulo18">Passos para implementação</h3>
-                <p>Os passos para implementação de VLANs incluem:</p>
-                <p>1. Planejamento: Identificar requisitos de rede e determinar quais VLANs serão necessárias.</p>
-                <p>2. Configuração: Criar VLANs, nomeá-las e atribuir portas de switch a essas VLANs.</p>
-                <p>3. Testes: Verificar a conectividade e o isolamento de tráfego entre VLANs.</p>
-                <p>4. Documentação: Manter registros detalhados das configurações de VLAN para futura referência e manutenção.</p>
+                <p>Identificar as necessidades de rede e segmentação necessárias para a organização.</p>
+                <p>1. Levantamento de Necessidades: Identifique as demandas específicas da rede, como largura de banda, segurança e acessibilidade.</p>
+                <p>2. Análise de Tráfego: Estude o tráfego existente para entender como os dispositivos se comunicam e onde são necessários segmentos.</p>
+                <p>3. Mapeamento de Dispositivos: Liste todos os dispositivos conectados para determinar quais agrupar em segmentos.</p>
                 <h3 id="subtitulo19">Comandos de configuração</h3>
-                <p>Alguns comandos básicos para configuração de VLANs em switches Cisco incluem:</p>
-                <p>```
-                Switch(config)# vlan 10
-                Switch(config-vlan)# name Marketing
-                Switch(config)# interface fastethernet 0/1
-                Switch(config-if)# switchport mode access
-                Switch(config-if)# switchport access vlan 10
-                Switch(config)# interface fastethernet 0/24
-                Switch(config-if)# switchport mode trunk
-                Switch(config-if)# switchport trunk encapsulation dot1q
-                ```</p>
-
+                <b style="color: white; margin-bottom: 10px;">Figura 5 - Comandos para criar a uma vlan</b><br>
+                <img src="img/image5.png" alt="Comandos para criar a uma vlan">
+                <p>Esses passos e comandos ajudam a implementar VLANs em switches Cisco, garantindo a segurança, a eficiência e a escalabilidade da rede.</p>
                 <h2 id="titulo5">5. Segurança em VLANs</h2>
                 <h3 id="subtitulo20">Desafios de segurança em VLANs</h3>
-                <p>As VLANs, embora ofereçam muitos benefícios, também apresentam desafios de segurança que precisam ser abordados. Um dos principais desafios é garantir que o tráfego entre VLANs seja devidamente controlado e monitorado para evitar acessos não autorizados.</p>
+                <p>1. Ataques VLAN Hopping: é um ataque em que um invasor ganha acesso não autorizado a tráfego de VLANs diferentes, explorando vulnerabilidades na configuração de trunking.</p>
+                <p>2. O VLAN hopping Ataques de Double-Tagging: é um ataque em que um invasor insere múltiplas tags VLAN em um quadro Ethernet para contornar as políticas de segurança e acessar informações sensíveis.</p>
                 <h3 id="subtitulo21">Práticas recomendadas de segurança</h3>
-                <p>Algumas práticas recomendadas para melhorar a segurança em VLANs incluem:</p>
-                <p>1. Uso de ACLs (Listas de Controle de Acesso) para filtrar o tráfego entre VLANs.</p>
-                <p>2. Configuração de VLANs de Gerenciamento separadas para tráfego administrativo.</p>
-                <p>3. Implementação de autenticação de porta e segurança baseada em MAC para controlar o acesso à rede.</p>
-
+                <p>1. Configuração de VLAN nativa segura : Evite o uso da VLAN 1 como VLAN nativa, alterando o VLAN ID para um número diferente para evitar vulnerabilidades associadas à VLAN 1.</p>
+                <p>2. Segmentação de VLANs por função : Segmentar VLANs com base em funções e necessidades de segurança, garantindo que apenas dispositivos autorizados tenham acesso a determinadas VLANs.</p>
+                <p>Essas práticas ajudam a fortalecer a segurança em VLANs, protegendo redes contra ataques e garantindo a integridade dos dados transmitidos.</p>
                 <h2 id="titulo6">6. Casos de Uso e Exemplos Práticos</h2>
+                <p>As VLANs são amplamente utilizadas em diversos ambientes, desde redes corporativas até datacenters e instituições educacionais, para segmentar redes, melhorar a segurança e a eficiência operacional. Aqui estão alguns exemplos práticos de casos de uso de VLANs em diferentes cenários:</p>
                 <h3 id="subtitulo22">VLANs em Redes Corporativas</h3>
-                <p>Em redes corporativas, as VLANs são amplamente utilizadas para segmentar o tráfego de diferentes departamentos, como finanças, marketing e recursos humanos. Isso ajuda a garantir que o tráfego sensível seja isolado e que a rede seja mais gerenciável e segura.</p>
+                <p>Segmentação por Departamento </p>
+                <p>Em empresas, as VLANs são usadas para segmentar a rede por departamento, permitindo que diferentes áreas tenham sua própria rede lógica e políticas de segurança específicas.</p>
+                <p>Separação de Tráfego de Voz e Dados</p>
+                <p>VLANs são implementadas para separar o tráfego de voz e dados, garantindo a qualidade das chamadas VoIP e priorizando o tráfego crítico.</p>
                 <h3 id="subtitulo23">VLANs em Redes Educacionais</h3>
-                <p>Nas redes educacionais, as VLANs permitem a segmentação de tráfego entre diferentes grupos de usuários, como alunos, professores e administração. Isso ajuda a garantir que os recursos da rede sejam utilizados de forma eficiente e que o acesso seja devidamente controlado.</p>
+                <p>Separação de Redes de Alunos e Professores:</p>
+                <p>Em instituições educacionais, VLANs são usadas para separar as redes de alunos e professores, garantindo a segurança dos dados e restringindo o acesso a recursos sensíveis.</p>
                 <h3 id="subtitulo24">VLANs em Datacenters</h3>
-                <p>Nos datacenters, as VLANs são usadas para isolar o tráfego entre diferentes serviços e aplicações, melhorando a segurança e a performance da rede. Elas permitem que administradores criem ambientes virtualizados seguros e eficientes.</p>
-
+                <p>Isolamento de Servidores e Dispositivos de Armazenamento:</p>
+                <p>Em datacenters, VLANs são utilizadas para isolar servidores e dispositivos de armazenamento, garantindo a segurança dos dados e otimizando o desempenho da rede.</p>
+                <p>Esses exemplos demonstram a versatilidade e importância das VLANs em diferentes ambientes, destacando como essa tecnologia é essencial para a segmentação eficaz da rede, aprimorando a segurança e a eficiência operacional em diversos cenários de uso.</p>
                 <h2 id="titulo7">7. Troubleshooting e Manutenção de VLANs</h2>
                 <h3 id="subtitulo25">Diagnóstico de Problemas Comuns</h3>
-                <p>O diagnóstico de problemas em redes VLAN pode envolver a verificação de configurações de VLAN, portas trunk e regras de ACL. Ferramentas de monitoramento de rede e comandos de diagnóstico, como `show vlan` e `show interfaces trunk`, são úteis para identificar e resolver problemas.</p>
-                <h3 id="subtitulo26">Monitoramento de Tráfego de VLAN</h3>
-                <p>O monitoramento de tráfego de VLAN é essencial para garantir o desempenho e a segurança da rede. Ferramentas de análise de tráfego, como Wireshark, podem ser usadas para capturar e analisar o tráfego de rede, ajudando a identificar anomalias e otimizar a performance.</p>
-
+                <p>Alguns problemas comuns que podem ocorrer com VLANs incluem:</p>
+                <p>1. Problemas de Conectividade </p>
+                <p>a. Dispositivos em uma VLAN não fornecem comunicação com outros na mesma VLAN</p>
+                <p>b. Verifique configurações de IP, máscara de sub-rede e gateway padrão.</p>
+                <h3 id="subtitulo26">Problemas de Configuração de Trunking</h3>
+                <p>a. Incompatibilidade na VLAN nativa configurada em cada extremidade do trunk.</p>
+                <p>b. Incompatibilidade no modo de entroncamento (ligado/desligado/automático) entre switches.</p>
+                <p>c. Verifique VLANs permitidas no trunk.</p>
+                <h3 id="subtitulo27">Monitoramento de Tráfego de VLAN</h3>
+                <p>Analisadores de protocolo como Wireshark para capturar e analisar pacotes. </p>
+                <p>Espelhamento de portas no switch para redirecionar tráfego de uma VLAN para uma porta de monitoramento.</p>
+                <p>Essas ferramentas e técnicas ajudam a identificar e resolver problemas relacionados a VLANs, garantindo o funcionamento correto da segmentação de rede.</p>
                 <h2 id="titulo8">8. Avanços e Tendências em VLANs</h2>
-                <h3 id="subtitulo27">Avanços e Tendências em VLANs</h3>
-                <p>Os avanços e tendências em VLANs incluem a adoção de tecnologias como SDN (Redes Definidas por Software) e a virtualização de redes. Essas tecnologias permitem uma gestão mais flexível e eficiente das VLANs, melhorando a escalabilidade e a capacidade de resposta da rede.</p>
-                
+                <p>À medida que as VLANs estão evoluindo em conjunto com as Redes Definidas por Software (SDN), permitindo uma gestão mais flexível e dinâmica das VLANs em ambientes de rede virtualizados.</p>
+                <p>Em SDN, a configuração e o gerenciamento de VLANs podem ser automatizados e programados de forma centralizada, simplificando a administração da rede.</p>
+                <p>A automação de VLANs está se tornando uma prática comum, especialmente em ambientes de SDN, onde a configuração e o provisionamento de VLANs podem ser automatizados para garantir uma implementação rápida e consistente.</p>
+                <p>Ferramentas de automação permitem a configuração dinâmica de VLANs com base em políticas predefinidas, simplificando a gestão e garantindo a conformidade com os requisitos da rede.</p>
+                <p>Nas redes da próxima geração, as VLANs continuarão desempenhando um papel fundamental na segmentação da rede e na melhoria da segurança e desempenho.</p>
+                <p>Com o avanço da tecnologia, esperamos que as VLANs evoluam para suportar requisitos cada vez mais complexos de redes modernas, como a tecnologia com tecnologias emergentes como o 5G e a Internet das Coisas (IoT).</p>
+                <p>Esses avanços e tendências destacam a importância contínua das VLANs na evolução das redes, adaptando-se às demandas de ambientes de rede cada vez mais dinâmicos e complexos. A integração com SDN, a automação e a evolução para redes de próxima geração são aspectos-chave que moldam o futuro das VLANs.</p>
+          
                 <br><br>
               </div>
               <center>
-              <button onclick="download()"><i class="bi bi-download"></i> Download</button>
+                <button onclick="download()"><i class="bi bi-download"></i> Download</button>
                 </center>
         </main>
         <div class="formulario">
@@ -204,5 +198,5 @@
     </center>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
-  </body>
+</body>
 </html>

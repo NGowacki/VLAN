@@ -113,3 +113,10 @@ body {
     padding: 1em;
     margin-top: 25px;
 }
+.b{
+    color: white;
+    margin-bottom: 10px;
+}
+.collapse a:hover{
+    color: rgb(0, 141, 176)
+}
